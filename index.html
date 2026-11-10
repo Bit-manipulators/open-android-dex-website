@@ -18,6 +18,9 @@
         <a href="#features">Features</a>
         <a href="#download">Download</a>
       </nav>
+      <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+        <span class="theme-toggle-icon">🌙</span>
+      </button>
     </div>
   </header>
 
@@ -72,6 +75,16 @@
         or build it yourself from source.
       </p>
       <a href="#" class="btn btn-secondary">View on GitHub</a>
+    </div>
+  </section>
+
+  <section id="search" class="section bg-alt">
+    <div class="container">
+      <h2>Search Pokémon</h2>
+      <div class="search-box">
+        <input type="text" id="pokemon-search" placeholder="Search Pokémon…" autocomplete="off" />
+      </div>
+      <div id="pokemon-results" class="pokemon-grid"></div>
     </div>
   </section>
 

@@ -15,6 +15,14 @@
   --max-width: 1000px;
 }
 
+html[data-theme="dark"] {
+  --bg: #0f172a;
+  --bg-alt: #1e293b;
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: #334155;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -121,6 +129,29 @@ a:hover {
   text-decoration: none;
 }
 
+/* Theme toggle */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--bg-alt);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--primary);
+}
+
+.theme-toggle:hover {
+  background: var(--border);
+}
+
 /* Mobile nav toggle */
 .nav-toggle {
   display: none;
@@ -191,6 +222,15 @@ a:hover {
 }
 
 @media (max-width: 640px) {
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+
+  .nav {
+    position: relative;
+    align-items: center;
+  }
+
   .nav-toggle {
     display: flex;
     margin-left: auto;
@@ -306,6 +346,62 @@ a:hover {
   text-align: left;
 }
 
+/* Pokémon search */
+.search-box {
+  max-width: 400px;
+  margin: 0 auto 2rem;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.pokemon-card {
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  text-align: center;
+  background: var(--bg);
+}
+
+.pokemon-card img {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 0.5rem;
+  display: block;
+}
+
+.pokemon-card h3 {
+  font-size: 1rem;
+  margin: 0 0 0.25rem;
+  color: var(--text);
+}
+
+.pokemon-card p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0;
+  text-transform: capitalize;
+}
+
 /* Footer */
 .footer {
   padding: 3rem 0;
@@ -313,28 +409,4 @@ a:hover {
   text-align: center;
   color: var(--text-muted);
   font-size: 0.9rem;
-}
-
-/* Responsive */
-@media (max-width: 640px) {
-  .hero h1 {
-    font-size: 2.25rem;
-  }
-
-  .nav {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 1rem;
-  }
-
-  .header nav {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .header nav a {
-    margin-left: 0;
-  }
 }
