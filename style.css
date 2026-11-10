@@ -87,6 +87,25 @@ a:hover {
   text-decoration: none;
 }
 
+/* Download buttons */
+.download-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.download-buttons .btn {
+  min-width: 200px;
+}
+
+@media (max-width: 480px) {
+  .download-buttons .btn {
+    flex: 1 1 100%;
+  }
+}
+
 /* Header */
 .header {
   padding: 1rem 0;
